@@ -1,0 +1,33 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f549e9ff375, pid=23728, tid=32094
+#
+# JRE version: OpenJDK Runtime Environment (15.0.1+9) (build 15.0.1+9-18)
+# Java VM: OpenJDK 64-Bit Server VM (15.0.1+9-18, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x4375]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x65
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/anand/Documents/microservice-workspace/SpringBoot2ErrorController/core.23728)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+ShowCodeDetailsInExceptionMessages -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:46275 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=45483 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -Djava.security.egd=file:/dev/./urandom -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=SpringBoot2ErrorController -javaagent:/home/anand/Downloads/spring-tool-suite-4-4.9.0.RELEASE-e4.18.0-linux.gtk.x86_64/sts-4.9.0.RELEASE/configuration/org.eclipse.osgi/247/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 com.micro.SpringBoot2ErrorControllerApplication --spring.output.ansi.enabled=always
+
+Host: Intel(R) Core(TM) i5-2520M CPU @ 2.50GHz, 4 cores, 11G, Ubuntu 18.04.5 LTS
+Time: Mon Apr  5 16:29:45 2021 IST elapsed time: 1889.008382 seconds (0d 0h 31m 29s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f5434006aa0):  JavaThread "RMI TCP Connection(35)-127.0.0.1" daemon [_thread_in_vm, id=32094, stack(0x00007f53fe6ee000,0x00007f53fe7ef000)]
+
+Stack: [0x00007f53fe6ee000,0x00007f53fe7ef000],  sp=0x00007f53fe7eb300,  free space=1012k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x4375]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x65
+C  [libjimage.so+0x4f0e]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x3e
+C  [libjimage.so+0x540c]  JIMAGE_FindResource+0xfc
+V  [libjvm.so+0x4e9f51]
